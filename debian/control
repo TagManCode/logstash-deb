@@ -1,0 +1,15 @@
+Source: logstash
+Section: universe/admin
+Priority: optional
+Build-Depends: debhelper (>= 8),
+ openjdk-7-jre-headless,
+Maintainer: Vaidas Jablonskis <vaidas.jablonskis@tagman.com>
+Uploaders: Vaidas Jablonskis <vaidas.jablonskis@tagman.com>
+Standards-Version: 3.9.3
+Homepage: https://github.com/TagManCode/logstash-deb
+
+Package: logstash
+Architecture: any
+Depends: ${misc:Depends},
+ openjdk-7-jre-headless,
+Description: Tool for managing events and logs.

@@ -1,0 +1,30 @@
+#
+# logstash upstart service script
+#
+description "Logstash service instance"
+
+start on (local-filesystems and net-device-up IFACE!=lo)
+stop on [!12345]
+
+respawn
+respawn limit 5 30
+limit nofile 65550 65550
+
+env HOME='/var/lib/logstash'
+
+chdir /var/lib/logstash
+setuid logstash
+setgid adm
+
+script
+    if [ -f /etc/default/logstash ]; then
+        . /etc/default/logstash
+    fi
+
+    if [ ! -d /run/logstash ]; then
+        install -d /run/logstash -m 0755 -o logstash -g adm
+    fi
+
+    exec java -jar /usr/share/logstash.jar agent -f /etc/logstash/logstash.conf \
+        --log /var/log/logstash/logstash.log 
+end script

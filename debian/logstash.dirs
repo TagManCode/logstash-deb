@@ -1,0 +1,4 @@
+etc/logstash
+var/lib/logstash
+var/log/logstash
+usr/share/logstash

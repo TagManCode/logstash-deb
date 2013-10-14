@@ -1,0 +1,4 @@
+#
+# Default logstash service configuration
+#
+export JAVA_OPTS='-Xms64m -Xmx128m'

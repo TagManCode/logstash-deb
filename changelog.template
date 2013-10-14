@@ -1,0 +1,6 @@
+%PKG_NAME% (%VERSION%-1) precise; urgency=low
+
+  * Release of version %VERSION%.
+
+ -- Vaidas Jablonskis <vaidas.jablonskis@tagman.com>  %TIMESTAMP%
+

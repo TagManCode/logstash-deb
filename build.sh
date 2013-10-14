@@ -10,6 +10,8 @@ BUILD_TIMESTAMP="$(date '+%a, %d %b %Y %R:%S %z')"
 UPSTREAM_VERSION=${1}
 JAR_URL="https://download.elasticsearch.org/logstash/logstash/logstash-${UPSTREAM_VERSION}-flatjar.jar"
 
+# fetch the logstash jar file
+wget -q "${JAR_URL}" -O logstash.jar
 
 # install build dependencies
 sudo apt-get install -y git pbuilder debootstrap devscripts apt-file \

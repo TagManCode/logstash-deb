@@ -31,6 +31,9 @@ case "$1" in
 
         chown -R logstash:logstash /var/lib/logstash || true
         chmod 0750 /var/lib/logstash || true
+
+        chown -R logstash:logstash /var/log/logstash || true
+        chmod 0750 /var/log/logstash || true
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

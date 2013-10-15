@@ -21,10 +21,6 @@ script
         . /etc/default/logstash
     fi
 
-    if [ ! -d /run/logstash ]; then
-        install -d /run/logstash -m 0755 -o logstash -g adm
-    fi
-
-    exec java -jar /usr/share/logstash.jar agent -f /etc/logstash/logstash.conf \
+    exec java -jar /usr/share/logstash/logstash.jar agent -f /etc/logstash/logstash.conf \
         --log /var/log/logstash/logstash.log 
 end script

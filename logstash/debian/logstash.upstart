@@ -21,6 +21,6 @@ script
         . /etc/default/logstash
     fi
 
-    exec java -jar /usr/share/logstash/logstash.jar agent -f /etc/logstash/logstash.conf \
+    exec java ${JAVA_OPTS} -jar /usr/share/logstash/logstash.jar agent -f /etc/logstash/logstash.conf \
         --log /var/log/logstash/logstash.log 
 end script

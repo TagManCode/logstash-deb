@@ -26,7 +26,7 @@ case "$1" in
                 --home /var/lib/logstash logstash
         fi
         # Fix directory permissions
-        chown -R root:logstash /etc/logstash || true
+        chown -R logstash:logstash /etc/logstash || true
         chmod 0750 /etc/logstash || true
 
         chown -R logstash:logstash /var/lib/logstash || true

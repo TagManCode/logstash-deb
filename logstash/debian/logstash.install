@@ -1,1 +1,2 @@
-logstash.jar  usr/share/logstash
+logstash.jar    usr/share/logstash
+logstash.conf   etc/logstash

@@ -2,3 +2,11 @@
 # Default logstash service configuration
 #
 export JAVA_OPTS='-Xms64m -Xmx128m'
+
+# Load the logstash config from a specific file, directory, or a wildcard. If
+# given a directory or wildcard, config files will be read from the directory
+# in alphabetical order.
+export LOGSTASH_CONFIG='/etc/logstash/logstash.conf'
+
+# Run COUNT filter workers (default: 1)
+export FILTER_WORKERS=1

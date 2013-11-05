@@ -6,8 +6,6 @@ description "Logstash service instance"
 start on (local-filesystems and net-device-up IFACE!=lo)
 stop on [!12345]
 
-respawn
-respawn limit 5 30
 limit nofile 65550 65550
 
 env HOME='/var/lib/logstash'

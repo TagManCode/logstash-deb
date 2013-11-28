@@ -1,0 +1,26 @@
+#
+# logstash-shipper upstart service script
+#
+description "Logstash Shipper service instance"
+
+start on (local-filesystems and net-device-up IFACE!=lo)
+stop on [!12345]
+
+limit nofile 65550 65550
+
+env HOME='/var/lib/logstash/shipper'
+
+chdir /var/lib/logstash/shipper
+setuid logstash
+setgid adm
+
+script
+    if [ -f /etc/default/logstash-shipper ]; then
+        . /etc/default/logstash-shipper
+    fi
+
+    exec java ${JAVA_OPTS} -jar /usr/share/logstash/logstash.jar agent \
+        -f ${LOGSTASH_CONFIG} \
+        -w ${FILTER_WORKERS} \
+        --log /var/log/logstash/logstash-shipper.log 
+end script

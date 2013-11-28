@@ -1,4 +1,5 @@
 etc/logstash
-var/lib/logstash
+var/lib/logstash/shipper
+var/lib/logstash/indexer
 var/log/logstash
 usr/share/logstash

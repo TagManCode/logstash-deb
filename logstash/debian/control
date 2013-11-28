@@ -13,3 +13,4 @@ Architecture: any
 Depends: ${misc:Depends},
  openjdk-7-jre-headless,
 Description: Tool for managing events and logs.
+ It installs both shipper and indexer as separate services.

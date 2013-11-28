@@ -1,0 +1,26 @@
+#
+# logstash-indexer upstart service script
+#
+description "Logstash Indexer service instance"
+
+start on (local-filesystems and net-device-up IFACE!=lo)
+stop on [!12345]
+
+limit nofile 65550 65550
+
+env HOME='/var/lib/logstash/shipper'
+
+chdir /var/lib/logstash/indexer
+setuid logstash
+setgid adm
+
+script
+    if [ -f /etc/default/logstash-indexer ]; then
+        . /etc/default/logstash-indexer
+    fi
+
+    exec java ${JAVA_OPTS} -jar /usr/share/logstash/logstash.jar agent \
+        -f ${LOGSTASH_CONFIG} \
+        -w ${FILTER_WORKERS} \
+        --log /var/log/logstash/logstash-indexer.log 
+end script

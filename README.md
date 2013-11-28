@@ -4,7 +4,8 @@ This repo does not contain an actual package (committing binary files to git is
 really a bad idea!).
 
 It contains required files and scripts to build a proper Ubuntu package for
-logstash as well as an upstart script and a sample config file.
+logstash as well as separate upstart scripts for both shipper and indexer
+services and a sample config file.
 
 
 ## Requirements
@@ -29,7 +30,7 @@ cd logstash-deb
 to fetch the right logstash jar file, so make sure that the version you want to
 build actually exists.
 
-This will procude a properly build deb package with all the necessary bits included.
+This will produce a properly built deb package with all the necessary bits included.
 
 Happy logstashing!
 

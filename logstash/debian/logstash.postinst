@@ -36,7 +36,7 @@ case "$1" in
         chmod 0750 /var/lib/logstash/shipper || true
 
         chown logstash:logstash /var/lib/logstash/indexer || true
-        chmod 0750 /var/lib/logstash-indexer || true
+        chmod 0750 /var/lib/logstash/indexer || true
 
         chown logstash:logstash /var/log/logstash || true
         chmod 0750 /var/log/logstash || true

@@ -2,3 +2,4 @@ logstash.jar                usr/share/logstash
 logstash.conf               etc/logstash
 logstash-shipper.override   etc/init
 logstash-indexer.override   etc/init
+dummy_plugin.rb             usr/share/logstash/inputs

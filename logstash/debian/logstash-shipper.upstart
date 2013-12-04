@@ -21,6 +21,7 @@ script
 
     exec java ${JAVA_OPTS} -jar /usr/share/logstash/logstash.jar agent \
         -f ${LOGSTASH_CONFIG} \
+        --pluginpath /usr/share \
         -w ${FILTER_WORKERS} \
-        --log /var/log/logstash/logstash-shipper.log 
+        --log /var/log/logstash/logstash-shipper.log
 end script

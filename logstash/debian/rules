@@ -14,3 +14,5 @@ override_dh_auto_install:
 override_dh_installinit:
 	dh_installinit --no-start --name=logstash-shipper
 	dh_installinit --no-start --name=logstash-indexer
+	dh_installlogrotate --name=logstash-shipper
+	dh_installlogrotate --name=logstash-indexer

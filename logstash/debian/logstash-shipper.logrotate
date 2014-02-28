@@ -1,0 +1,10 @@
+/var/log/logstash/logstash-shipper.log {
+    daily
+    missingok
+    notifempty
+    compress
+    sharedscripts
+    postrotate
+        /sbin/restart logstash-shipper > /dev/null 2>/dev/null || true
+    endscript
+}

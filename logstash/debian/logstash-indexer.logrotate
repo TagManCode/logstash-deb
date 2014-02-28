@@ -1,0 +1,10 @@
+/var/log/logstash/logstash-indexer.log {
+    daily
+    missingok
+    notifempty
+    compress
+    sharedscripts
+    postrotate
+        /sbin/restart logstash-indexer > /dev/null 2>/dev/null || true
+    endscript
+}
